@@ -6,6 +6,7 @@ import Header from '../../components/header/header';
 import './style.css';
 import '../reset.css';
 
+import RefreshPage from './reload';
 
 export default function Listagem(){
 
@@ -17,11 +18,13 @@ export default function Listagem(){
       setPhotos(response.data);
     });
   }, []);
-  
+
+ 
   if (!photo) {
     return <p>Carregando...</p>
   }
 
+  
   return (
     <div id="listagemConteiner">
       <Header />
@@ -34,26 +37,31 @@ export default function Listagem(){
       />
       
       <label>{album}</label>
+      <button 
+        type="button"
+        className="atualizar"
+        onClick={RefreshPage}
+      >
+        Atualizar
+      </button>
     </div>
 
       <div className="album1">     
           <div className="item">
+
           {photo.filter(id => id.albumId === album).map(filteredAlbum => (
             <li key={filteredAlbum.id}>
+              <p>{album}</p>
               <p>{filteredAlbum.title}</p>
               <div className="imagem">
                 <img src={filteredAlbum.url} alt={filteredAlbum.title} />
               </div>
             </li>
           ))} 
-          </div>
-     
-      
-  
+
+          </div>         
       </div>  
 
     </div>
-
     )
-
 }
