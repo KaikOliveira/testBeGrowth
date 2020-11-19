@@ -8,11 +8,12 @@
 html {
     font-size: 62.5%;
 }
-html,
-body{
-    height: 100vh;
-    text-rendering: optimizeLegibility;
-}
 body{
     font-size: 1.6rem;
+    -webkit-font-smoothing: antialiased !important;
+}
+html,
+body #root{
+    height: 100vh;
+    text-rendering: optimizeLegibility;
 }

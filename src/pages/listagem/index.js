@@ -1,7 +1,7 @@
 import React, {useEffect, useState,}from 'react';
 
 import api from '../../services/api';
-import logo from '../../image/logo.png';
+import Header from '../../components/header/header';
 
 import './style.css';
 import '../reset.css';
@@ -10,6 +10,7 @@ import '../reset.css';
 export default function Listagem(){
 
   const [photo, setPhotos ] = useState();
+  const [album, setAlbum] = useState();
 
   useEffect( () => {
     api.get('photos').then(response => {
@@ -23,19 +24,21 @@ export default function Listagem(){
 
   return (
     <div id="listagemConteiner">
-      <aside>
-        <header>
-          <img src={logo} alt="Logo" />
-          <div id="title">
-            <h2>Processo seletivo Be Growth</h2>
-          </div>
-        </header>
-      </aside>
+      <Header />
 
-      <div className="album1">
-        <ul>
+    <div className="search">
+      <input 
+        id="idAlbum"
+        onChange={e => setAlbum(e.target.value)}
+        value={album}
+      />
+      
+      <label>{album}</label>
+    </div>
+
+      <div className="album1">     
           <div className="item">
-          {photo.filter(id => id.albumId === 1).map(filteredAlbum => (
+          {photo.filter(id => id.albumId === album).map(filteredAlbum => (
             <li key={filteredAlbum.id}>
               <p>{filteredAlbum.title}</p>
               <div className="imagem">
@@ -44,7 +47,7 @@ export default function Listagem(){
             </li>
           ))} 
           </div>
-        </ul>
+     
       
   
       </div>  
