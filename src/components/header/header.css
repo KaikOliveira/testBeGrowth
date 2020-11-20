@@ -13,7 +13,6 @@ header{
     overflow: hidden;
     height: 12%;
 }
-
 header #image img{
     position: sticky;
     left: 2%;
@@ -23,7 +22,7 @@ header #image img{
 header #title{
     position: sticky;
     width: 100vw;
-    right: 25vw;
+    right: 23vw;
     height: 100%;
     display: flex;
     align-items: center;

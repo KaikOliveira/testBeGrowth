@@ -1,20 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Goldman:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
 #listagemConteiner {
     background-color: #cfd1da;
-
     width: 100vw;
     height: 100vh;
 }
+#listagemConteiner .search {
+    position: sticky;
+    left: 30vw;
+    top: 13vh;
+    width: 40%;
+    min-width: 440px;
+    height: 11%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 5px;
+    border-color: #454545;
+    background-color: #cfd1da;
+}
+#listagemConteiner .search input{
+    position: absolute;
+    bottom: 2px;
+    width: 100%;
+    height: 100%;
+    max-height: 30px;
+    max-width: 80px;
+    border-radius: 10px;
+    border-color:#454545;
 
+    font-family: 'Goldman', cursive;
+}
+#listagemConteiner .search input::-webkit-textfield-decoration-container{
+    margin-left: 42%;
+}
+#listagemConteiner .search .description {
+    width: 100%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #cfd1da;
+}
+#listagemConteiner .search .description h2{
+    font-size: 1.5rem;
+    font-family: 'Goldman', cursive;
+}
 #listagemConteiner .album1 {
     position: sticky;
     left: 30vw;
-    top: 20vh;
+    top: 25vh;
     display: flex;
     flex-direction: column;   
     overflow: scroll;
     height: 70%;
     width: 40%;
-    background-color: #000;
+    min-width: 440px;
+    background-color: #9593a4; 
 }
 #listagemConteiner .album1 .item{
     display: flex;
@@ -22,26 +66,115 @@
     width: 100%;
     max-width: 100vw;
     height: 100%;
+    background-color: #9593a4; 
 }
 #listagemConteiner .album1 .item li { 
     width:  auto;
     height: auto;
     margin: 5px;
-    display: block; 
-    
-    background-color: aqua;
+    display: block;
+    background-color: #cfd1da;
     transition: all 0.3 ease 0s;
 }
 #listagemConteiner .album1 li .imagem {
-    
+    position: sticky;
+    left: 0;
 }
 #listagemConteiner .album1 li .imagem img{
     width: 150px;
     height: 150px;
 }
+#listagemConteiner .album1 .item li .icon{
+    position: absolute;
+    left: 165px;
+    margin-top: 110px;
+}
+#listagemConteiner .album1 li h5{
+    display: flex;
 
-#listagemConteiner .album1 li p{
-    font-size: 1.2rem;
+    flex-direction: column;
+    position: absolute;
+    right: 5%;
+    font-size: 1.4rem;
     color: #000;
-    width: auto;
+    font-family: 'Roboto', sans-serif;
+}
+.album1 li h5#album{
+    position: absolute;
+    left: 165px;
+    margin-top: 10px;
+
+}
+.album1 li h5#id{
+    position: absolute;
+    left: 165px;
+    margin-top: 35px;
+}
+.album1 li h5#title{
+    position: absolute;
+    left: 165px;
+    margin-top: 60px;
+}
+
+@media(max-width: 768px){
+    #listagemConteiner .search{
+        left: 25vw;
+    }
+    #listagemConteiner .album1{
+        left: 25vw;
+    }
+} 
+
+@media(max-width: 541px){
+    #listagemConteiner .search{
+        left: 20vw;
+        min-width: 340px;
+        height: 15%;
+    }
+    #listagemConteiner .album1{
+        left: 20vw;
+        min-width: 340px;
+        top: 32vh;
+        height: 60%;
+    }
+}
+
+@media(max-width: 437px){
+    #listagemConteiner .search{
+        left: 13vw;
+    }
+    #listagemConteiner .album1{
+        left: 13vw;
+    }
+} 
+
+@media(max-width: 391px){
+    #listagemConteiner .search{
+        left: 12vw;
+        min-width: 300px;
+        height: 15%;
+    }
+    #listagemConteiner .album1{
+        left: 12vw;
+        min-width: 300px;
+        top: 32vh;
+        height: 60%;
+    }
+}
+
+@media(max-width: 320px){
+    #listagemConteiner .search{
+        left: 8vw;
+        min-width: 280px;
+        height: 15%;
+    }
+    #listagemConteiner .album1{
+        left: 8vw;
+        min-width: 280px;
+        top: 32vh;
+        height: 60%;
+    }
+    #listagemConteiner .album1 li h5{
+        font-size: 1.1rem;
+    }
 }
